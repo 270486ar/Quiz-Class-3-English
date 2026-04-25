@@ -1,46 +1,122 @@
-const allQuestions = {
-
-  english: {
-    eng01: [
-      { q: "Synonym of Happy?", options: ["Sad","Glad","Angry","Cry"], answer: "Glad" },
-      { q: "Opposite of Big?", options: ["Large","Huge","Small","Tall"], answer: "Small" }
-    ],
-
-    eng02: [
-      { q: "Plural of Child?", options: ["Childs","Children","Childes","Child"], answer: "Children" },
-      { q: "Verb in sentence?", options: ["Run","Book","Pen","Chair"], answer: "Run" }
-    ]
+const quiz = [
+  {
+    subject: "evs",
+    question: "What do we call the people we live with at home?",
+    options: ["Friends", "Family", "Neighbors", "Teachers"],
+    answer: 1
   },
-
-  math: {
-    math01: [
-      { q: "5 + 3 = ?", options: ["6","7","8","9"], answer: "8" },
-      { q: "10 - 4 = ?", options: ["5","6","7","8"], answer: "6" }
-    ],
-
-    math02: [
-      { q: "6 x 2 = ?", options: ["10","11","12","13"], answer: "12" }
-    ]
+  {
+    subject: "evs",
+    question: "Which food helps us grow strong?",
+    options: ["Junk food", "Healthy food", "Sweets", "Chocolates"],
+    answer: 1
   },
-
-  science: {
-    sci01: [
-      { q: "Water formula?", options: ["H2O","CO2","O2","NaCl"], answer: "H2O" }
-    ],
-
-    sci02: [
-      { q: "Planet nearest to Sun?", options: ["Earth","Mars","Mercury","Venus"], answer: "Mercury" }
-    ]
+  {
+    subject: "evs",
+    question: "Which of these is a source of water?",
+    options: ["Mountain", "River", "Road", "Tree"],
+    answer: 1
   },
-
-  gk: {
-    gk01: [
-      { q: "Capital of India?", options: ["Mumbai","Delhi","Chennai","Kolkata"], answer: "Delhi" }
-    ],
-
-    gk02: [
-      { q: "National animal of India?", options: ["Lion","Tiger","Elephant","Horse"], answer: "Tiger" }
-    ]
+  {
+    subject: "evs",
+    question: "Why do we need water?",
+    options: ["To play only", "To drink and clean", "To throw", "No need"],
+    answer: 1
+  },
+  {
+    subject: "evs",
+    question: "Which transport is used to travel long distances quickly?",
+    options: ["Bicycle", "Car", "Aeroplane", "Cart"],
+    answer: 2
+  },
+  {
+    subject: "evs",
+    question: "Who helps us when we are sick?",
+    options: ["Teacher", "Doctor", "Driver", "Farmer"],
+    answer: 1
+  },
+  {
+    subject: "evs",
+    question: "What do plants need to grow?",
+    options: ["Water and sunlight", "Plastic", "Metal", "Glass"],
+    answer: 0
+  },
+  {
+    subject: "evs",
+    question: "Which animal lives in water?",
+    options: ["Dog", "Cat", "Fish", "Cow"],
+    answer: 2
+  },
+  {
+    subject: "evs",
+    question: "Why should we keep our surroundings clean?",
+    options: ["To look dirty", "To stay healthy", "To waste time", "No reason"],
+    answer: 1
+  },
+  {
+    subject: "evs",
+    question: "Which is a good habit?",
+    options: ["Not bathing", "Throwing waste", "Washing hands", "Littering"],
+    answer: 2
+  },
+  {
+    subject: "evs",
+    question: "What do we use to see things?",
+    options: ["Ears", "Eyes", "Nose", "Hands"],
+    answer: 1
+  },
+  {
+    subject: "evs",
+    question: "Which festival is celebrated with colors?",
+    options: ["Diwali", "Holi", "Eid", "Christmas"],
+    answer: 1
+  },
+  {
+    subject: "evs",
+    question: "What kind of house is made of ice?",
+    options: ["Tent", "Igloo", "Hut", "Flat"],
+    answer: 1
+  },
+  {
+    subject: "evs",
+    question: "Which is a means of communication?",
+    options: ["Stone", "Letter", "Chair", "Table"],
+    answer: 1
+  },
+  {
+    subject: "evs",
+    question: "What should we do to save water?",
+    options: ["Keep tap open", "Waste water", "Close tap tightly", "Play with water"],
+    answer: 2
+  },
+  {
+    subject: "evs",
+    question: "Which animal is a pet?",
+    options: ["Lion", "Tiger", "Dog", "Elephant"],
+    answer: 2
+  },
+  {
+    subject: "evs",
+    question: "Which season brings rain?",
+    options: ["Summer", "Winter", "Rainy", "Spring"],
+    answer: 2
+  },
+  {
+    subject: "evs",
+    question: "What do farmers grow?",
+    options: ["Cars", "Crops", "Chairs", "Books"],
+    answer: 1
+  },
+  {
+    subject: "evs",
+    question: "Why do we wear clothes?",
+    options: ["To look dirty", "To protect our body", "To waste money", "No reason"],
+    answer: 1
+  },
+  {
+    subject: "evs",
+    question: "Which place do we go to learn?",
+    options: ["Hospital", "School", "Market", "Park"],
+    answer: 1
   }
-
-};
+];
