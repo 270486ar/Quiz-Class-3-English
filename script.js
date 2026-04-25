@@ -1,11 +1,12 @@
 let index = 0;
-let score = 0;
+let score = 0;          // marks (5 each)
+let correctCount = 0;  // count like 1/20
 let answered = false;
 
 // LOAD QUESTION
 function loadQuestion() {
   if (!quiz || quiz.length === 0) {
-    console.log("Quiz data not loaded");
+    console.log("Quiz not loaded");
     return;
   }
 
@@ -48,12 +49,21 @@ function selectAnswer(ans, btn) {
   });
 
   if (ans === q.answer) {
-    score += 5; // ✅ 5 marks per correct answer
+    score += 5;
+    correctCount++;
     showFeedback("Very Good! 🎉", true);
     launchFireworks();
   } else {
     showFeedback("Try Again ❌", false);
   }
+
+  updateLiveScore(); // ✅ update after each answer
+}
+
+// LIVE SCORE
+function updateLiveScore() {
+  document.getElementById("liveScore").innerText =
+    `Score: ${correctCount}/${quiz.length}`;
 }
 
 // FEEDBACK
@@ -97,22 +107,24 @@ function showResult() {
   }
 
   document.getElementById("finalScore").innerText =
-    `Score: ${score}/${quiz.length * 5} - ${msg}`;
+    `Correct: ${correctCount}/${quiz.length} | Marks: ${score}/${quiz.length * 5} - ${msg}`;
 }
 
 // RESTART
 document.getElementById("restartBtn").onclick = function () {
   index = 0;
   score = 0;
+  correctCount = 0;
 
   document.getElementById("resultBox").classList.add("hidden");
   document.getElementById("quizBox").classList.remove("hidden");
   document.getElementById("nextBtn").classList.remove("hidden");
 
+  updateLiveScore();
   loadQuestion();
 };
 
-// PROGRESS BAR
+// PROGRESS
 function updateProgress() {
   let percent = ((index + 1) / quiz.length) * 100;
   document.getElementById("progressBar").style.width = percent + "%";
@@ -122,7 +134,7 @@ function updateProgress() {
 function launchFireworks() {
   const colors = ["#ff5252", "#ffeb3b", "#40c4ff", "#69f0ae", "#ff4081"];
 
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 10; i++) {
     let rocket = document.createElement("div");
 
     rocket.style.position = "fixed";
@@ -132,66 +144,22 @@ function launchFireworks() {
     rocket.style.bottom = "0px";
     rocket.style.left = Math.random() * window.innerWidth + "px";
     rocket.style.borderRadius = "50%";
-    rocket.style.zIndex = 9999;
 
     document.body.appendChild(rocket);
 
-    let speed = Math.random() * 5 + 5;
     let pos = 0;
-
     let fly = setInterval(() => {
-      pos += speed;
+      pos += 8;
       rocket.style.bottom = pos + "px";
 
       if (pos > window.innerHeight * 0.6) {
         clearInterval(fly);
-        burst(rocket.style.left, rocket.style.bottom, rocket.style.background);
         rocket.remove();
       }
     }, 20);
   }
 }
 
-// BURST EFFECT
-function burst(x, y, color) {
-  for (let i = 0; i < 15; i++) {
-    let dot = document.createElement("div");
-
-    dot.style.position = "fixed";
-    dot.style.width = "6px";
-    dot.style.height = "6px";
-    dot.style.background = color;
-    dot.style.left = x;
-    dot.style.bottom = y;
-    dot.style.borderRadius = "50%";
-    dot.style.zIndex = 9999;
-
-    document.body.appendChild(dot);
-
-    let angle = Math.random() * 2 * Math.PI;
-    let velocity = Math.random() * 5 + 2;
-
-    let dx = Math.cos(angle) * velocity;
-    let dy = Math.sin(angle) * velocity;
-
-    let xPos = parseFloat(x);
-    let yPos = parseFloat(y);
-
-    let move = setInterval(() => {
-      xPos += dx;
-      yPos += dy;
-      dy -= 0.2;
-
-      dot.style.left = xPos + "px";
-      dot.style.bottom = yPos + "px";
-
-      if (yPos <= 0) {
-        clearInterval(move);
-        dot.remove();
-      }
-    }, 20);
-  }
-}
-
-// START QUIZ
+// START
+updateLiveScore();
 loadQuestion();
