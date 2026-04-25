@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Test</title>
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+  <div class="card">
+
+    <h2>GK Test</h2>
+
+    <!-- Progress Bar -->
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+
+    <!-- Question Count -->
+    <p id="qCount"></p>
+
+    <!-- Quiz Area -->
+    <div id="quizBox">
+      <h3 id="question">Loading...</h3>
+      <div id="options"></div>
+      <p id="feedback"></p>
+    </div>
+
+    <!-- Next Button -->
+    <br>
+    <button id="nextBtn">Next</button>
+
+    <!-- Result -->
+    <div id="resultBox" class="hidden">
+      <h2>Test Completed 🎉</h2>
+      <p id="finalScore"></p>
+      <button id="restartBtn">Restart</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Scripts (IMPORTANT ORDER) -->
+<script src="questions.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

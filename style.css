@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f2f4f8;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.progress {
+  height: 8px;
+  background: #ddd;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+#progressBar {
+  height: 8px;
+  width: 0%;
+  background: green;
+  border-radius: 5px;
+}
+
+#question {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+#options button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  background: #e3e7ff;
+  font-size: 16px;
+}
+
+#feedback {
+  font-weight: bold;
+  text-align: center;
+}
+
+#nextBtn {
+  padding: 10px 20px;
+  border: none;
+  background: green;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+#resultBox {
+  text-align: center;
+}
