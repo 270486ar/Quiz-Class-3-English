@@ -4,6 +4,11 @@ let answered = false;
 
 // LOAD QUESTION
 function loadQuestion() {
+  if (!quiz || quiz.length === 0) {
+    console.log("Quiz data not loaded");
+    return;
+  }
+
   let q = quiz[index];
   answered = false;
 
@@ -32,10 +37,10 @@ function selectAnswer(ans, btn) {
 
   buttons.forEach(b => {
     if (b.innerText === q.answer) {
-      b.style.background = "green"; // correct
+      b.style.background = "green";
       b.style.color = "#fff";
     } else if (b.innerText === ans) {
-      b.style.background = "red"; // wrong
+      b.style.background = "red";
       b.style.color = "#fff";
     } else {
       b.style.background = "#ddd";
@@ -43,9 +48,9 @@ function selectAnswer(ans, btn) {
   });
 
   if (ans === q.answer) {
-    score++;
+    score += 5; // ✅ 5 marks per correct answer
     showFeedback("Very Good! 🎉", true);
-    launchFireworks(); // 🚀 NEW EFFECT
+    launchFireworks();
   } else {
     showFeedback("Try Again ❌", false);
   }
@@ -82,17 +87,17 @@ function showResult() {
 
   let msg = "";
 
-  if (score === quiz.length) {
+  if (score === quiz.length * 5) {
     msg = "Excellent 🌟";
     launchFireworks();
-  } else if (score >= quiz.length / 2) {
+  } else if (score >= (quiz.length * 5) / 2) {
     msg = "Good 👍";
   } else {
     msg = "Keep Practicing 💪";
   }
 
   document.getElementById("finalScore").innerText =
-    `Score: ${score}/${quiz.length} - ${msg}`;
+    `Score: ${score}/${quiz.length * 5} - ${msg}`;
 }
 
 // RESTART
@@ -107,15 +112,13 @@ document.getElementById("restartBtn").onclick = function () {
   loadQuestion();
 };
 
-// PROGRESS
+// PROGRESS BAR
 function updateProgress() {
-  let percent = (index / quiz.length) * 100;
+  let percent = ((index + 1) / quiz.length) * 100;
   document.getElementById("progressBar").style.width = percent + "%";
 }
 
-//
-// 🚀 FIREWORKS (BOTTOM → TOP → BURST)
-//
+// FIREWORKS
 function launchFireworks() {
   const colors = ["#ff5252", "#ffeb3b", "#40c4ff", "#69f0ae", "#ff4081"];
 
@@ -149,7 +152,7 @@ function launchFireworks() {
   }
 }
 
-// BURST PARTICLES
+// BURST EFFECT
 function burst(x, y, color) {
   for (let i = 0; i < 15; i++) {
     let dot = document.createElement("div");
@@ -190,5 +193,5 @@ function burst(x, y, color) {
   }
 }
 
-// START
+// START QUIZ
 loadQuestion();

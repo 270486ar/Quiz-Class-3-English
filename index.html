@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile Test</title>
+  <title>Fawn Kids Quiz Academy</title>
 
-  <!-- Link CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,28 +14,31 @@
 <div class="container">
   <div class="card">
 
-    <h2>GK Test</h2>
+    <!-- LOGO -->
+    <img src="logo.png" alt="Fawn Kids Logo" class="logo">
 
-    <!-- Progress Bar -->
+    <!-- TITLE -->
+    <h2 class="title">Fawn Kids Quiz Academy</h2>
+
+    <!-- PROGRESS BAR -->
     <div class="progress">
       <div id="progressBar"></div>
     </div>
 
-    <!-- Question Count -->
+    <!-- QUESTION COUNT -->
     <p id="qCount"></p>
 
-    <!-- Quiz Area -->
+    <!-- QUIZ BOX -->
     <div id="quizBox">
       <h3 id="question">Loading...</h3>
       <div id="options"></div>
       <p id="feedback"></p>
     </div>
 
-    <!-- Next Button -->
-    <br>
+    <!-- NEXT BUTTON -->
     <button id="nextBtn">Next</button>
 
-    <!-- Result -->
+    <!-- RESULT BOX -->
     <div id="resultBox" class="hidden">
       <h2>Test Completed 🎉</h2>
       <p id="finalScore"></p>
@@ -45,7 +48,7 @@
   </div>
 </div>
 
-<!-- Scripts (IMPORTANT ORDER) -->
+<!-- IMPORTANT: LOAD ORDER -->
 <script src="questions.js"></script>
 <script src="script.js"></script>
 

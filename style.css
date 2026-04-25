@@ -1,29 +1,78 @@
 body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
   margin: 0;
-  font-family: Arial;
-  background: #f2f4f8;
+  padding: 0;
 }
 
 .container {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .card {
-  width: 100%;
-  max-width: 400px;
   background: #fff;
-  border-radius: 15px;
-  padding: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
+/* LOGO */
+.logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+/* TITLE */
+.title {
+  margin-bottom: 15px;
+}
+
+/* OPTIONS */
+#options button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #eee;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#options button:hover {
+  background: #ddd;
+}
+
+/* NEXT BUTTON */
+#nextBtn {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 20px;
+  border: none;
+  background: #4CAF50;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#nextBtn:hover {
+  background: #45a049;
+}
+
+/* PROGRESS BAR */
 .progress {
+  width: 100%;
   height: 8px;
   background: #ddd;
   border-radius: 5px;
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
 
 #progressBar {
@@ -33,39 +82,7 @@ body {
   border-radius: 5px;
 }
 
-#question {
-  font-size: 18px;
-  margin: 15px 0;
-}
-
-#options button {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 10px;
-  background: #e3e7ff;
-  font-size: 16px;
-}
-
-#feedback {
-  font-weight: bold;
-  text-align: center;
-}
-
-#nextBtn {
-  padding: 10px 20px;
-  border: none;
-  background: green;
-  color: white;
-  border-radius: 10px;
-  font-size: 16px;
-}
-
+/* RESULT */
 .hidden {
   display: none;
-}
-
-#resultBox {
-  text-align: center;
 }
